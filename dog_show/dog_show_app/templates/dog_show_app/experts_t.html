@@ -1,0 +1,20 @@
+{% extends 'dog_show_app/base.html' %}
+
+
+{% block title %}
+    Определение экспертов, оценивающих породу
+{% endblock title %}
+
+{% block content %}
+
+     <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+            {% for breed in breeds %}
+                <p>
+                    <a href="{% url 'breed' breed.id %}">
+                        <button type="button" class="btn btn-primary">{{ breed.name }}</button>
+                    </a>
+                </p>
+            {% endfor %}
+     </div>
+
+{% endblock content %}

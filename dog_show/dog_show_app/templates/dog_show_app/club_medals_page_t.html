@@ -1,0 +1,15 @@
+{% extends 'dog_show_app/base.html' %}
+
+{% block title %}
+    Результаты определения медалей клуба
+{% endblock title %}
+
+{% block content %}
+    <p>
+        <ul class="list-group">
+            <li class="list-group-item"> Золото: {{ gold }} </li>
+            <li class="list-group-item"> Серебро: {{ silver }} </li>
+            <li class="list-group-item"> Бронза: {{ bronze }} </li>
+        </ul>
+    </p>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'dog_show_app/base.html' %}
+
+{% block title %}
+    Результаты поиска пород, которыми представлен заданный клуб
+{% endblock title %}
+
+{% block content %}
+    <p>
+        <ul class="list-group">
+        {% for dog in dogs %}
+            {% with flag=0 %}
+                {% for doggie in dogs %}
+                    {% if doggie.breed.id < dog.breed.id %}
+                        {% if doggie.breed == dog.breed %}
+                            {{ flag|add:"1" }}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                {% if flag == 0 %}
+                        <li class="list-group-item">{{ dog.breed.name }}</li>
+                {% endif %}
+            {% endwith %}
+        {% endfor %}
+        </ul>
+    </p>
+{% endblock content %}

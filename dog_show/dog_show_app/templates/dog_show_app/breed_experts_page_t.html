@@ -1,0 +1,15 @@
+{% extends 'dog_show_app/base.html' %}
+
+{% block title %}
+    Результаты определения экспертов, оценивающих породу
+{% endblock title %}
+
+{% block content %}
+    <p>
+        <ul class="list-group">
+        {% for expert in experts %}
+            <li class="list-group-item">{{ expert.surname }} {{ expert.name }} {{ expert.patronymic }}</li>
+        {% endfor %}
+        </ul>
+    </p>
+{% endblock content %}

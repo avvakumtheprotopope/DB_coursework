@@ -1,0 +1,25 @@
+{% extends 'dog_show_app/base.html' %}
+
+{% block title %}
+    Main page
+{% endblock title %}
+
+{% block content %}
+    <div class="d-grid gap-2" style="margin: 20px">
+        <a href="{% url 'ring_by_owner' %}">
+            <button class="btn btn-primary" type="button"> Определить ринг участника </button>
+        </a>
+        <a href="{% url 'breeds_by_club' %}">
+            <button class="btn btn-primary" type="button"> Породы клуба </button>
+        </a>
+        <a href="{% url 'medals_by_club' %}">
+            <button class="btn btn-primary" type="button"> Медали клуба </button>
+        </a>
+        <a href="{% url 'experts_by_breed' %}">
+            <button class="btn btn-primary" type="button"> Эксперты породы </button>
+        </a>
+        <a href="{% url 'dog_by_expert' %}">
+            <button class="btn btn-primary" type="button"> Собака эксперта </button>
+        </a>
+    </div>
+{% endblock content %}

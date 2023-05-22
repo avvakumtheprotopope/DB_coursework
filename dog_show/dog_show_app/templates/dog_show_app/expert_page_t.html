@@ -1,0 +1,15 @@
+{% extends 'dog_show_app/base.html' %}
+
+{% block title %}
+    Результаты определения собак по оценивающему их эксперту
+{% endblock title %}
+
+{% block content %}
+    <p>
+        <ul class="list-group">
+        {% for dog in dogs %}
+            <li class="list-group-item">{{ dog.name }}</li>
+        {% endfor %}
+        </ul>
+    </p>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends 'dog_show_app/base.html' %}
+
+{% block title %}
+    Определение ринга по выступающему участнику
+{% endblock title %}
+
+{% block content %}
+        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+            {% for owner in owners %}
+                <p>
+                    <a href="{% url 'owner' owner.id %}">
+                        <button type="button" class="btn btn-primary">{{ owner.surname }} {{ owner.name }} {{ owner.patronymic }}</button>
+                    </a>
+                </p>
+            {% endfor %}
+        </div>
+{% endblock content %}

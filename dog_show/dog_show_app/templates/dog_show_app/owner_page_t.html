@@ -1,0 +1,17 @@
+{% extends 'dog_show_app/base.html' %}
+{% load ring_by_dog %}
+
+{% block title %}
+    Результаты поиска рингов, на которых выступают собаки участника
+{% endblock title %}
+
+{% block content %}
+    <p>
+        <ul class="list-group">
+        {% for nice_dog in nice_dogs%}
+            {% ring_by_dog nice_dog.id as nice_ring_id %}
+                <li class="list-group-item">{{ nice_dog.name }} выступает на ринге {{ nice_ring_id }}</li>
+        {% endfor %}
+        </ul>
+    </p>
+{% endblock content %}

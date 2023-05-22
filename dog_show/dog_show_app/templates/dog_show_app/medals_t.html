@@ -1,0 +1,19 @@
+{% extends 'dog_show_app/base.html' %}
+
+{% block title %}
+    Определение медалей клуба
+{% endblock title %}
+
+{% block content %}
+
+        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+            {% for club in clubs %}
+                <p>
+                    <a href="{% url 'club_medals' club.id %}">
+                        <button type="button" class="btn btn-primary">{{ club.name }}</button>
+                    </a>
+                </p>
+            {% endfor %}
+        </div>
+
+{% endblock content %}
